@@ -10,7 +10,6 @@ export function AppContextProvider({
 }: {
   children: React.ReactNode;
 }) {
-  const [products, setProducts] = useState([]);
   const allProducts: any = [
     {
       _id: 1,
@@ -306,11 +305,12 @@ Connectivity: 6 x USB 3.1 | 2 x USB 2.0 | 1x RJ-45 Network Ethernet 10/100/1000 
       type: "Best Deals",
     },
   ];
-  useEffect(() => {
-    if (allProducts) {
-      setProducts(allProducts);
-    }
-  }, [allProducts]);
+  // // useEffect(() => {
+  // if (allProducts) {
+  //   setProducts(allProducts);
+  // }
+  // // }, [allProducts]);
+  const [products, setProducts] = useState(allProducts);
   const value = { products, setProducts };
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 }

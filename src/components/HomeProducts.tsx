@@ -28,7 +28,7 @@ const HomeProducts = ({ productType }: { productType: string }) => {
               {product.type.split(" ").join("").toLowerCase() ==
               productType.split(" ").join("").toLowerCase() ? (
                 <>
-                  <ProductCard product={product} />
+                  <ProductCard key={product._id} product={product} />
                 </>
               ) : (
                 ""

@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 import { Button } from "./ui/button";
 import Link from "next/link";
 import { FaRegUserCircle, FaShoppingBag, FaUserCircle } from "react-icons/fa";
-import Router, { usePathname } from "next/navigation";
+import Router, { usePathname, useRouter } from "next/navigation";
 import {
   LiaAngleDownSolid,
   LiaAngleUpSolid,
@@ -32,6 +32,7 @@ const Navbar = () => {
   ];
   const [hideCate, setHideCate] = useState(false);
   const pathname = usePathname();
+  const router = useRouter();
   useEffect(() => {
     if (pathname === "/") {
       const handleResize = () => {
@@ -164,33 +165,16 @@ const Navbar = () => {
             )}
           </div>
           <Link
-            onClick={() => {
-              setOpenCategories(false);
-              setOpenMenu(false);
-            }}
-            className="navbar-link "
+            onClick={() => console.log("clicked")}
             href={"/shop"}
+            className="navbar-link "
           >
             Shop
           </Link>
-          <Link
-            onClick={() => {
-              setOpenCategories(false);
-              setOpenMenu(false);
-            }}
-            className="navbar-link "
-            href={"/"}
-          >
+          <Link className="navbar-link " href={"/"}>
             About Us
           </Link>
-          <Link
-            onClick={() => {
-              setOpenCategories(false);
-              setOpenMenu(false);
-            }}
-            className="navbar-link "
-            href={"/"}
-          >
+          <Link className="navbar-link " href={"/"}>
             Contact Us
           </Link>
         </div>
