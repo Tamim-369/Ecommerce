@@ -1,6 +1,6 @@
 "use client";
 import { FaGift, FaMagnifyingGlass, FaRegUser } from "react-icons/fa6";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import React, { useEffect, useState } from "react";
 import { Button } from "./ui/button";
 import Link from "next/link";
