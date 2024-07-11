@@ -310,7 +310,7 @@ Connectivity: 6 x USB 3.1 | 2 x USB 2.0 | 1x RJ-45 Network Ethernet 10/100/1000 
     if (allProducts) {
       setProducts(allProducts);
     }
-  }, []);
+  }, [allProducts]);
   const value = { products, setProducts };
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 }
