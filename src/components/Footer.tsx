@@ -18,7 +18,7 @@ const Footer = () => {
                     src="https://www.facebook.com/images/fb_icon_325x325.png"
                     alt=""
                     className="h-[1.2rem]"
-                    srcset=""
+                    srcSet=""
                   />
                   <span className="block lowercase first-letter:uppercase">
                     facebook
@@ -132,7 +132,7 @@ const Footer = () => {
 
           <div className="text-sm font-medium flex items-center flex-col md:flex-row justify-between">
             <p>© Hitekbd 2024. All rights reserved</p>
-            <span className="block" target="_blank">
+            <span className="block">
               Developed by{" "}
               <a
                 href="https://www.facebook.com/profile.php?id=61553982567839"
