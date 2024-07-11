@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 import { Button } from "./ui/button";
 import Link from "next/link";
 import { FaRegUserCircle, FaShoppingBag, FaUserCircle } from "react-icons/fa";
-import Router, { usePathname, useRouter } from "next/navigation";
+import Router, { usePathname } from "next/navigation";
 import {
   LiaAngleDownSolid,
   LiaAngleUpSolid,
@@ -32,7 +32,6 @@ const Navbar = () => {
   ];
   const [hideCate, setHideCate] = useState(false);
   const pathname = usePathname();
-  const router = useRouter();
   useEffect(() => {
     if (pathname === "/") {
       const handleResize = () => {
@@ -77,7 +76,7 @@ const Navbar = () => {
           >
             <FaMagnifyingGlass className="text-lg" />
           </Button>
-          <button className="text-lg text-primary min-[400px]:hover:text-white transition-all  min-[400px]:p-2 md:p-3 md:text-white flex md:bg-primary bg-transparent rounded-md md:py-[6px] min-[400px]:bg-zinc-100 justify-center items-center  gap-2 ">
+          <button className="text-lg text-primary min-[400px]:hover:text-white min-[400px]:hover:bg-primary transition-all  min-[400px]:p-2 md:p-3 md:text-white flex md:bg-primary bg-transparent rounded-md md:py-[6px] min-[400px]:bg-zinc-100 justify-center items-center  gap-2 ">
             <FaGift className="md:text-lg text-xl" />
             <span className="text-base font-medium mt-[1px] md:block hidden">
               Offers
@@ -165,16 +164,33 @@ const Navbar = () => {
             )}
           </div>
           <Link
-            onClick={() => console.log("clicked")}
-            href={"/shop"}
+            onClick={() => {
+              setOpenCategories(false);
+              setOpenMenu(false);
+            }}
             className="navbar-link "
+            href={"/shop"}
           >
             Shop
           </Link>
-          <Link className="navbar-link " href={"/"}>
+          <Link
+            onClick={() => {
+              setOpenCategories(false);
+              setOpenMenu(false);
+            }}
+            className="navbar-link "
+            href={"/"}
+          >
             About Us
           </Link>
-          <Link className="navbar-link " href={"/"}>
+          <Link
+            onClick={() => {
+              setOpenCategories(false);
+              setOpenMenu(false);
+            }}
+            className="navbar-link "
+            href={"/"}
+          >
             Contact Us
           </Link>
         </div>
