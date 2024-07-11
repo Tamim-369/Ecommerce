@@ -77,8 +77,8 @@ const Hero = () => {
             src={slides[imageIndex].src}
             className="w-full h-full  rounded-sm sm:rounded-lg border min-[400px]:object-contain object-top"
             objectFit="cover"
-            width={1000}
-            height={1000}
+            width={1920}
+            height={1080}
           />
           <div className="flex px-5 bottom-0 w-full justify-center gap-2 mb-4 items-center absolute">
             {slides.map((slide, index) => (

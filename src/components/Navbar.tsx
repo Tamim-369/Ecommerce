@@ -51,20 +51,11 @@ const Navbar = () => {
     <nav className="sm:border-none border fixed z-50 top-0 w-[100%] flex justify-center items-center flex-col">
       <div className="flex w-full bg-white min-[400px]:px-5 xl:px-24 lg:px-16 px-1 p-3 justify-between items-center">
         {/* logo */}
-        <Link
-          onClick={() => {
-            setOpenCategories(false);
-            setOpenMenu(false);
-          }}
-          href={"/"}
-          className="logo"
-        >
-          <Image
+        <Link href={"/"} className="logo">
+          <img
             alt="logo"
             src={"/logo.png"}
-            className="md:object-scale-down  scale-90 filter  min-[400px]:scale-100 min-[400px]:object-contain object-center"
-            width={140}
-            height={140}
+            className="md:object-scale-down scale-90  filter  min-[400px]:scale-100 min-[400px]:object-contain object-center object-contain h-8  sm:w-32 sm:h-10 "
           />
         </Link>
         {/* search */}
@@ -155,15 +146,18 @@ const Navbar = () => {
               >
                 {categories.map((category) => (
                   <Link
-                    onClick={() => {
-                      setOpenCategories(false);
-                      setOpenMenu(false);
-                    }}
                     className="categories-link"
                     href={category.split(" ").join("-").toLowerCase()}
                     key={category}
                   >
-                    {category}
+                    <p
+                      onClick={() => {
+                        setOpenCategories(false);
+                        setOpenMenu(false);
+                      }}
+                    >
+                      {category}
+                    </p>
                   </Link>
                 ))}
               </div>
