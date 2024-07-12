@@ -7,11 +7,13 @@ import { SlArrowRight } from "react-icons/sl";
 import { FaAngleRight } from "react-icons/fa6";
 
 const Path = () => {
-  const [paths, setPaths] = useState([]);
+  const [paths, setPaths] = useState<string[]>([]);
 
   useEffect(() => {
     const url = window?.location?.pathname;
-    setPaths(url?.split("/").filter((p) => p !== ""));
+    if (url) {
+      setPaths(url.split("/").filter((p) => p !== ""));
+    }
   }, []);
 
   return (
