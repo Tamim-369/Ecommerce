@@ -129,7 +129,7 @@ body {
 }
 
 .all-categories {
-  @apply flex flex-col bg-white w-full md:w-full lg:w-[95%] xl:w-[96%] my-2 justify-center items-center md:absolute text-black rounded-md border border-b-0;
+  @apply flex flex-col bg-white w-full md:w-full lg:w-[95%] xl:w-[96%] my-1 justify-center items-center md:absolute text-black rounded-md border border-b-0;
 }
 .all-categories-home {
   @apply flex flex-col bg-white w-full justify-center items-center md:absolute lg:relative lg:h-[76%] lg:overflow-y-auto lg:justify-start xl:h-auto mt-2 text-black rounded-md border border-b-0 lg:w-[20dvw] xl:w-[21.5dvw];

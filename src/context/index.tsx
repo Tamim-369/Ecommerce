@@ -13,8 +13,13 @@ export function AppContextProvider({
   const allProducts: any = [
     {
       _id: 1,
-      thumbnail: "product1.jpg",
-      images: ["product1.jpg", "product2.jpg", "product3.jpg", "product4.jpg"],
+      thumbnail: "/product1.jpg",
+      images: [
+        "/product1.jpg",
+        "/product2.jpg",
+        "/product3.jpg",
+        "/product4.jpg",
+      ],
       name: "Product number 1",
       descripton:
         "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden",
@@ -32,8 +37,13 @@ Connectivity: 6 x USB 3.1 | 2 x USB 2.0 | 1x RJ-45 Network Ethernet 10/100/1000 
     {
       _id: 2,
 
-      thumbnail: "product2.jpg",
-      images: ["product1.jpg", "product2.jpg", "product3.jpg", "product4.jpg"],
+      thumbnail: "/product2.jpg",
+      images: [
+        "/product1.jpg",
+        "/product2.jpg",
+        "/product3.jpg",
+        "/product4.jpg",
+      ],
       name: "Product number 2",
       descripton:
         "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden",
@@ -51,8 +61,13 @@ Connectivity: 6 x USB 3.1 | 2 x USB 2.0 | 1x RJ-45 Network Ethernet 10/100/1000 
     {
       _id: 2,
 
-      thumbnail: "product5.jpg",
-      images: ["product1.jpg", "product2.jpg", "product3.jpg", "product4.jpg"],
+      thumbnail: "/product5.jpg",
+      images: [
+        "/product1.jpg",
+        "/product2.jpg",
+        "/product3.jpg",
+        "/product4.jpg",
+      ],
       name: "Product number 2",
       descripton:
         "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden",
@@ -70,8 +85,13 @@ Connectivity: 6 x USB 3.1 | 2 x USB 2.0 | 1x RJ-45 Network Ethernet 10/100/1000 
     {
       _id: 2,
 
-      thumbnail: "product7.jpg",
-      images: ["product1.jpg", "product2.jpg", "product3.jpg", "product4.jpg"],
+      thumbnail: "/product7.jpg",
+      images: [
+        "/product1.jpg",
+        "/product2.jpg",
+        "/product3.jpg",
+        "/product4.jpg",
+      ],
       name: "Product number 2",
       descripton:
         "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden",
@@ -89,8 +109,13 @@ Connectivity: 6 x USB 3.1 | 2 x USB 2.0 | 1x RJ-45 Network Ethernet 10/100/1000 
     {
       _id: 2,
 
-      thumbnail: "product7.jpg",
-      images: ["product1.jpg", "product2.jpg", "product3.jpg", "product4.jpg"],
+      thumbnail: "/product7.jpg",
+      images: [
+        "/product1.jpg",
+        "/product2.jpg",
+        "/product3.jpg",
+        "/product4.jpg",
+      ],
       name: "Product number 2",
       descripton:
         "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden",
@@ -108,8 +133,13 @@ Connectivity: 6 x USB 3.1 | 2 x USB 2.0 | 1x RJ-45 Network Ethernet 10/100/1000 
     {
       _id: 3,
 
-      thumbnail: "product1.jpg",
-      images: ["product1.jpg", "product2.jpg", "product3.jpg", "product4.jpg"],
+      thumbnail: "/product1.jpg",
+      images: [
+        "/product1.jpg",
+        "/product2.jpg",
+        "/product3.jpg",
+        "/product4.jpg",
+      ],
       name: "Product number 3",
       descripton:
         "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden",
@@ -127,8 +157,13 @@ Connectivity: 6 x USB 3.1 | 2 x USB 2.0 | 1x RJ-45 Network Ethernet 10/100/1000 
     {
       _id: 4,
 
-      thumbnail: "product3.jpg",
-      images: ["product1.jpg", "product2.jpg", "product3.jpg", "product4.jpg"],
+      thumbnail: "/product3.jpg",
+      images: [
+        "/product1.jpg",
+        "/product2.jpg",
+        "/product3.jpg",
+        "/product4.jpg",
+      ],
       name: "Product number 4",
       descripton:
         "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden",
@@ -146,8 +181,13 @@ Connectivity: 6 x USB 3.1 | 2 x USB 2.0 | 1x RJ-45 Network Ethernet 10/100/1000 
     {
       _id: 5,
 
-      thumbnail: "product4.jpg",
-      images: ["product1.jpg", "product2.jpg", "product3.jpg", "product4.jpg"],
+      thumbnail: "/product4.jpg",
+      images: [
+        "/product1.jpg",
+        "/product2.jpg",
+        "/product3.jpg",
+        "/product4.jpg",
+      ],
       name: "Product number 5",
       descripton:
         "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden",
@@ -166,8 +206,13 @@ Connectivity: 6 x USB 3.1 | 2 x USB 2.0 | 1x RJ-45 Network Ethernet 10/100/1000 
     {
       _id: 6,
 
-      thumbnail: "product6.jpg",
-      images: ["product1.jpg", "product2.jpg", "product3.jpg", "product4.jpg"],
+      thumbnail: "/product6.jpg",
+      images: [
+        "/product1.jpg",
+        "/product2.jpg",
+        "/product3.jpg",
+        "/product4.jpg",
+      ],
       name: "Product number 6",
       descripton:
         "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden",
@@ -186,8 +231,13 @@ Connectivity: 6 x USB 3.1 | 2 x USB 2.0 | 1x RJ-45 Network Ethernet 10/100/1000 
     {
       _id: 7,
 
-      thumbnail: "product1.jpg",
-      images: ["product1.jpg", "product2.jpg", "product3.jpg", "product4.jpg"],
+      thumbnail: "/product1.jpg",
+      images: [
+        "/product1.jpg",
+        "/product2.jpg",
+        "/product3.jpg",
+        "/product4.jpg",
+      ],
       name: "Product number 7",
       descripton:
         "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden",
@@ -206,8 +256,13 @@ Connectivity: 6 x USB 3.1 | 2 x USB 2.0 | 1x RJ-45 Network Ethernet 10/100/1000 
     {
       _id: 8,
 
-      thumbnail: "product2.jpg",
-      images: ["product1.jpg", "product2.jpg", "product3.jpg", "product4.jpg"],
+      thumbnail: "/product2.jpg",
+      images: [
+        "/product1.jpg",
+        "/product2.jpg",
+        "/product3.jpg",
+        "/product4.jpg",
+      ],
       name: "Product number 8",
       descripton:
         "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden",
@@ -227,8 +282,13 @@ Connectivity: 6 x USB 3.1 | 2 x USB 2.0 | 1x RJ-45 Network Ethernet 10/100/1000 
     {
       _id: 8,
 
-      thumbnail: "product4.jpg",
-      images: ["product1.jpg", "product2.jpg", "product3.jpg", "product4.jpg"],
+      thumbnail: "/product4.jpg",
+      images: [
+        "/product1.jpg",
+        "/product2.jpg",
+        "/product3.jpg",
+        "/product4.jpg",
+      ],
       name: "Product number 8",
       descripton:
         "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden",
@@ -247,8 +307,13 @@ Connectivity: 6 x USB 3.1 | 2 x USB 2.0 | 1x RJ-45 Network Ethernet 10/100/1000 
     {
       _id: 8,
 
-      thumbnail: "product3.jpg",
-      images: ["product1.jpg", "product2.jpg", "product3.jpg", "product4.jpg"],
+      thumbnail: "/product3.jpg",
+      images: [
+        "/product1.jpg",
+        "/product2.jpg",
+        "/product3.jpg",
+        "/product4.jpg",
+      ],
       name: "Product number 8",
       descripton:
         "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden",
@@ -267,8 +332,13 @@ Connectivity: 6 x USB 3.1 | 2 x USB 2.0 | 1x RJ-45 Network Ethernet 10/100/1000 
     {
       _id: 8,
 
-      thumbnail: "product2.jpg",
-      images: ["product1.jpg", "product2.jpg", "product3.jpg", "product4.jpg"],
+      thumbnail: "/product2.jpg",
+      images: [
+        "/product1.jpg",
+        "/product2.jpg",
+        "/product3.jpg",
+        "/product4.jpg",
+      ],
       name: "Product number 8",
       descripton:
         "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden",
@@ -287,8 +357,13 @@ Connectivity: 6 x USB 3.1 | 2 x USB 2.0 | 1x RJ-45 Network Ethernet 10/100/1000 
     {
       _id: 8,
 
-      thumbnail: "product5.jpg",
-      images: ["product1.jpg", "product2.jpg", "product3.jpg", "product4.jpg"],
+      thumbnail: "/product5.jpg",
+      images: [
+        "/product1.jpg",
+        "/product2.jpg",
+        "/product3.jpg",
+        "/product4.jpg",
+      ],
       name: "Product number 8",
       descripton:
         "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden",

@@ -120,7 +120,7 @@ const Navbar = () => {
                   BROWSE CATEGORIES
                 </span>
               </div>
-              {pathname == "/" && (
+              {/* {pathname == "/" && (
                 <div
                   className={` ${
                     pathname === "/" ? "hidden lg:hidden xl:flex" : "hidden"
@@ -128,22 +128,16 @@ const Navbar = () => {
                 >
                   <LiaAngleUpSolid />
                 </div>
-              )}
+              )} */}
 
               <div
-                className={` ${
-                  pathname === "/" ? "xl:hidden" : ""
-                } flex justify-center items-center lg:hidden xl:flex`}
+                className={` flex justify-center items-center lg:hidden xl:flex`}
               >
                 {openCategories ? <LiaAngleUpSolid /> : <LiaAngleDownSolid />}
               </div>
             </button>
             {openCategories && (
-              <div
-                className={`${
-                  pathname === "/" ? "lg:hidden " : "all-categories"
-                } all-categories`}
-              >
+              <div className={` all-categories`}>
                 {categories.map((category) => (
                   <Link
                     className="categories-link"

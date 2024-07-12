@@ -5,13 +5,17 @@ import useAppContext from "@/context";
 import ProductInterface from "@/types/productTypes";
 import { Button } from "./ui/button";
 import { MdOutlineManageSearch } from "react-icons/md";
+import Path from "./Path";
 
 const Shop = () => {
   const { products, setProducts }: any = useAppContext();
   const [openFilter, setOpenFilter] = useState(false);
   return (
-    <>
-      <div className="min-h-[80dvh] w-[96%] lg:w-[86%] mt-[4.5rem] md:mt-32 mx-auto mb-5 flex flex-col lg:flex-row justify-center items-start gap-5">
+    <div className="flex flex-col mt-[4.5rem] md:mt-28 justify-center items-center w-full">
+      <div className="flex justify-start items-center w-[98%] sm:border-t md:border-t-0 p-2 lg:w-[86%]">
+        <Path />
+      </div>
+      <div className="min-h-[80dvh] w-[96%] lg:w-[86%]  mx-auto mb-5 flex flex-col lg:flex-row justify-center items-start gap-5">
         <div className="lg:hidden sm:px-0 px-2 flex justify-between w-full items-center">
           <div className="text-xl HeadText font-extrabold">
             <h1>Shop Products</h1>
@@ -133,7 +137,7 @@ const Shop = () => {
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

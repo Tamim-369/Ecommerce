@@ -15,7 +15,7 @@ export default function ProductCard({ product, minWidth }: Props) {
     >
       <Link
         className="relative  flex h-60 overflow-hidden rounded-t-xl"
-        href={`/product/${product?._id}`}
+        href={`/shop/product/${product?._id}`}
       >
         <img
           className="object-cover object-center w-full h-full"
@@ -27,7 +27,7 @@ export default function ProductCard({ product, minWidth }: Props) {
         </span>
       </Link>
       <div className="mt-4 px-5 pb-5">
-        <Link href={`/product/${product?._id}`}>
+        <Link href={`/shop/product/${product?._id}`}>
           <h5 className="text-xl tracking-tight text-zinc-900">
             {product?.name}
           </h5>
@@ -39,7 +39,7 @@ export default function ProductCard({ product, minWidth }: Props) {
           </p>
         </div>
         <Link
-          href={`/product/${product?._id}`}
+          href={`/shop/product/${product?._id}`}
           className="flex items-center justify-center rounded-md bg-primary px-5 py-2.5 text-center text-base font-medium text-white focus:outline-none focus:ring-4 focus:ring-blue-300"
         >
           <svg
