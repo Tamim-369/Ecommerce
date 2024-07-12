@@ -6,7 +6,13 @@ import useAppContext from "@/context";
 import ProductInterface from "@/types/productTypes";
 import Image from "next/image";
 import Path from "./Path";
-const Product = ({ productId }: { productId: string }) => {
+const Product = ({
+  productId,
+  pathname,
+}: {
+  productId: string;
+  pathname: string;
+}) => {
   const { products }: any = useAppContext();
   const [product, setProduct] = useState<ProductInterface>({
     _id: 0,
