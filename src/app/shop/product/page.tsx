@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
-const page = () => {
+const UndefinedProduct = () => {
   const router = useRouter();
   useEffect(() => {
     router.push("/shop");
@@ -9,4 +9,4 @@ const page = () => {
   return <></>;
 };
 
-export default page;
+export default UndefinedProduct;
