@@ -8,10 +8,13 @@ import { FaAngleRight } from "react-icons/fa6";
 
 const Path = () => {
   const [paths, setPaths] = useState<string[]>([]);
+  const [origin, setOrigin] = useState("");
 
   useEffect(() => {
     const url = window?.location?.pathname;
+
     if (url) {
+      setOrigin(window.location.origin);
       setPaths(url.split("/").filter((p) => p !== ""));
     }
   }, []);
@@ -19,7 +22,7 @@ const Path = () => {
   return (
     <div className="flex mt-2 justify-center items-center gap-1">
       <Link
-        href={`${window?.location?.origin}/`}
+        href={`${origin}/`}
         className="flex justify-center items-center gap-1"
       >
         Home
@@ -34,7 +37,7 @@ const Path = () => {
           )}
 
           <Link
-            href={`${window?.location?.origin}/${paths
+            href={`${window.location.origin}/${paths
               .slice(0, index + 1)
               .join("/")}`}
             className={`${index === paths.length - 1 ? "text-primary" : ""}`}
