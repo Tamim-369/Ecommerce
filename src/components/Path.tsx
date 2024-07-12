@@ -10,8 +10,8 @@ const Path = () => {
   const [paths, setPaths] = useState([]);
 
   useEffect(() => {
-    const url = window.location.pathname;
-    setPaths(url.split("/").filter((p) => p !== ""));
+    const url = window?.location?.pathname;
+    setPaths(url?.split("/").filter((p) => p !== ""));
   }, []);
 
   return (
