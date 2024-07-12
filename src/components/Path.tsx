@@ -19,7 +19,7 @@ const Path = () => {
   return (
     <div className="flex mt-2 justify-center items-center gap-1">
       <Link
-        href={`${window.location.origin}/`}
+        href={`${window?.location?.origin}/`}
         className="flex justify-center items-center gap-1"
       >
         Home
@@ -34,7 +34,7 @@ const Path = () => {
           )}
 
           <Link
-            href={`${window.location.origin}/${paths
+            href={`${window?.location?.origin}/${paths
               .slice(0, index + 1)
               .join("/")}`}
             className={`${index === paths.length - 1 ? "text-primary" : ""}`}
