@@ -51,8 +51,7 @@ Connectivity: 6 x USB 3.1 | 2 x USB 2.0 | 1x RJ-45 Network Ethernet 10/100/1000 
       specification: "",
       about: `System: Intel Core i7-13700F 2.1GHz 8+8 Cores | Intel B760 Chipset | 16GB DDR5 | 1TB PCIe Gen4 NVMe SSD | Genuine Windows 11 Home 64-bit
 Graphics: NVIDIA GeForce RTX 4060 Ti 16GB Video Card | 1x HDMI | 2x DisplayPort
-Connectivity: 6 x USB 3.1 | 2 x USB 2.0 | 1x RJ-45 Network Ethernet 10/100/1000 | 802.11AC Wi-Fi | Audio: 7.1 Channel |  Keyboard and mouse
-  Special feature: Tempered glass side case panel | Custom RGB case lighting | 7 colors gaming mouse`,
+Connectivity: 6 x USB 3.1 | 2 x USB 2.0 | 1x RJ-45 Network Ethernet 10/100/1000 | 802.11AC Wi-Fi | Audio: 7.1 Channel |  Keyboard and mouse Special feature: Tempered glass side case panel | Custom RGB case lighting | 7 colors gaming mouse`,
       category: "category",
       discount: 0,
       brand: "brandz",

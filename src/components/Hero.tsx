@@ -79,6 +79,7 @@ const Hero = () => {
             objectFit="cover"
             width={1920}
             height={1080}
+            priority
           />
           <div className="flex px-5 bottom-0 w-full justify-center gap-2 mb-4 items-center absolute">
             {slides.map((slide, index) => (

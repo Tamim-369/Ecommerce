@@ -78,7 +78,7 @@ const Shop = () => {
               <div className="w-full lg:flex-1">
                 <input
                   type="number"
-                  className="p-2  w-full bg-zinc-100 focus:outline-none rounded-md"
+                  className="py-2 px-3  w-full bg-zinc-100 focus:outline-none rounded-md"
                   name="low"
                   id="low"
                   placeholder="Lowest"
@@ -87,7 +87,7 @@ const Shop = () => {
               <div className="w-full lg:flex-1">
                 <input
                   type="number"
-                  className="p-2  w-full bg-zinc-100 focus:outline-none rounded-md"
+                  className="py-2 px-3  w-full bg-zinc-100 focus:outline-none rounded-md"
                   name="low"
                   id="low"
                   placeholder="Highest"

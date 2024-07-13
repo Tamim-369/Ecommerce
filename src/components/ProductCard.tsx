@@ -2,6 +2,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import ProductInterface from "@/types/productTypes";
 import Link from "next/link";
+import { getDiscountedPrice } from "@/utils/ProductUtils";
 interface Props {
   product: ProductInterface;
   minWidth?: boolean;
@@ -22,9 +23,11 @@ export default function ProductCard({ product, minWidth }: Props) {
           src={product?.thumbnail}
           alt="product image"
         />
-        <span className="absolute top-0 left-0 m-2 rounded-full bg-primary px-2 text-center text-sm font-medium text-white">
-          {product?.discount}% OFF
-        </span>
+        {product.discount > 0 && (
+          <span className="absolute top-0 left-0 m-2 rounded-full bg-primary px-2 text-center text-sm font-medium text-white">
+            {product?.discount}% OFF
+          </span>
+        )}
       </Link>
       <div className="mt-4 px-5 pb-5">
         <Link href={`/shop/product/${product?._id}`}>
@@ -34,8 +37,14 @@ export default function ProductCard({ product, minWidth }: Props) {
         </Link>
         <div className="mt-2 mb-5 flex items-center justify-between">
           <p>
-            <span className="text-3xl font-bold text-zinc-900">৳449</span>
-            <span className="text-sm text-zinc-900 line-through">৳699</span>
+            <span className="text-2xl font-bold text-zinc-900">
+              ${getDiscountedPrice(product.price, product.discount)}
+            </span>
+            {product.discount > 0 && (
+              <span className="text-sm text-zinc-900 line-through">
+                ${product.price}
+              </span>
+            )}
           </p>
         </div>
         <Link

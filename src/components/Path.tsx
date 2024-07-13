@@ -5,6 +5,7 @@ import Link from "next/link";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { SlArrowRight } from "react-icons/sl";
 import { FaAngleRight } from "react-icons/fa6";
+import { IoHome } from "react-icons/io5";
 
 const Path = () => {
   const [paths, setPaths] = useState<string[]>([]);
@@ -25,15 +26,12 @@ const Path = () => {
         href={`${origin}/`}
         className="flex justify-center items-center gap-1"
       >
-        Home
-        <FaAngleRight className="text-sm" />
+        <IoHome />/{/* <FaAngleRight className="text-sm" /> */}
       </Link>
       {paths.map((path, index) => (
         <div className="flex justify-center items-center gap-1" key={index}>
           {index > 0 && (
-            <span>
-              <FaAngleRight className="text-sm" />
-            </span>
+            <span>{/* <FaAngleRight className="text-sm" /> */}/</span>
           )}
 
           <Link
