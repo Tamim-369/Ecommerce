@@ -23,7 +23,7 @@ export default function ProductCard({ product, minWidth }: Props) {
       }  flex w-full max-w-xs flex-col  rounded-xl border border-zinc-200 bg-white shadow-md`}
     >
       <Link
-        className="relative  flex h-60 overflow-hidden rounded-t-xl"
+        className="relative  flex h-40 min-[350px]:h-48 min-[450px]:h-60 overflow-hidden rounded-t-xl"
         href={`/shop/product/${product?._id}`}
       >
         <img
@@ -37,22 +37,22 @@ export default function ProductCard({ product, minWidth }: Props) {
           </span>
         )}
       </Link>
-      <div className="mt-4 px-5 pb-5">
-        <small className="text-xs font-bold uppercase w-full text-left tracking-tight text-zinc-600">
+      <div className="mt-4 px-2 pb-2 min-[450px]:px-5 min-[450px]:pb-5">
+        <small className="text-[0.6rem] min-[350px]:text-xs font-bold uppercase w-full text-left tracking-tight text-zinc-600">
           {product?.brand}
         </small>
         <Link href={`/shop/product/${product?._id}`}>
-          <h5 className="text-xl w-full text-left tracking-tight text-zinc-900">
+          <h5 className="text-[1rem] font-semibold min-[350px]:text-lg min-[350px]:font-semibold min-[450px]:font-medium min-[450px]:text-xl w-full text-left tracking-tight text-zinc-900">
             {product?.name}
           </h5>
         </Link>
-        <div className="mt-2 mb-5 flex items-center justify-between">
+        <div className="min-[450px]:mt-2 mb-2 min-[450px]:mb-5 flex items-center justify-between">
           <p>
-            <span className="text-2xl font-bold text-zinc-900">
+            <span className="text-lg min-[350px]:text-xl min-[450px]:text-2xl font-bold text-zinc-900">
               ${getDiscountedPrice(product.price, product.discount)}
             </span>
             {product.discount > 0 && (
-              <span className="text-sm text-zinc-900 line-through">
+              <span className="text-xs min-[450px]:text-sm text-zinc-900 line-through">
                 ${product.price}
               </span>
             )}
@@ -104,11 +104,11 @@ export default function ProductCard({ product, minWidth }: Props) {
                 </div>
               ));
             }}
-            className={`flex  items-center justify-center rounded-md bg-primary px-5 w-full py-2.5 text-center text-base font-medium text-white focus:outline-none`}
+            className={`flex  items-center justify-center rounded-md bg-primary w-full px-2 py-2 min-[450px]:px-5  min-[450px]:py-2.5 text-center text-sm min-[450px]:text-base font-medium text-white focus:outline-none`}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="mr-2 h-6 w-6"
+              className="mr-2 min-[450px]:h-6 min-[450px]:w-6 h-5 w-5"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
