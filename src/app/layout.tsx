@@ -3,6 +3,8 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { AppContextProvider } from "@/context";
+import { ShopContextProvider } from "@/context/shop";
+import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
   title: "HitekBD",
@@ -17,11 +19,14 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body>
-        <AppContextProvider>
-          <Navbar />
-          {children}
-          <Footer />
-        </AppContextProvider>
+        <Toaster position="top-right" />
+        <ShopContextProvider>
+          <AppContextProvider>
+            <Navbar />
+            {children}
+            <Footer />
+          </AppContextProvider>
+        </ShopContextProvider>
       </body>
     </html>
   );

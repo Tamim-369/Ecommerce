@@ -12,7 +12,7 @@ export function AppContextProvider({
 }) {
   const allProducts: any = [
     {
-      _id: 1,
+      _id: "1",
       thumbnail: "/product1.jpg",
       images: [
         "/product1.jpg",
@@ -25,17 +25,25 @@ export function AppContextProvider({
         "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden",
       price: 100,
       specification: "",
-      about: `System: Intel Core i7-13700F 2.1GHz 8+8 Cores | Intel B760 Chipset | 16GB DDR5 | 1TB PCIe Gen4 NVMe SSD | Genuine Windows 11 Home 64-bit
-Graphics: NVIDIA GeForce RTX 4060 Ti 16GB Video Card | 1x HDMI | 2x DisplayPort
-Connectivity: 6 x USB 3.1 | 2 x USB 2.0 | 1x RJ-45 Network Ethernet 10/100/1000 | 802.11AC Wi-Fi | Audio: 7.1 Channel |  Keyboard and mouse
-  Special feature: Tempered glass side case panel | Custom RGB case lighting | 7 colors gaming mouse`,
+      about: `[🚀Features🔥]:
+Best Music Sync System.
+✅ 16 Million Colour Installed.
+✅ Mobile App Control IOS/Android .
+✅ 143 Lighting Mode.
+✅ 18 Music sync lighting mode.
+✅ Customization facility.
+✅ Remote Control.
+✅Led Quantity-18leds/m
+✅Waterproof 💦 
+✅Premium Quality 
+`,
       category: "category",
       discount: 10,
       brand: "brandz",
       type: "Exclusive",
     },
     {
-      _id: 2,
+      _id: "2",
 
       thumbnail: "/product2.jpg",
       images: [
@@ -58,7 +66,7 @@ Connectivity: 6 x USB 3.1 | 2 x USB 2.0 | 1x RJ-45 Network Ethernet 10/100/1000 
       type: "Best Selling",
     },
     {
-      _id: 2,
+      _id: "3",
 
       thumbnail: "/product5.jpg",
       images: [
@@ -82,7 +90,7 @@ Connectivity: 6 x USB 3.1 | 2 x USB 2.0 | 1x RJ-45 Network Ethernet 10/100/1000 
       type: "Best Selling",
     },
     {
-      _id: 2,
+      _id: "4",
 
       thumbnail: "/product7.jpg",
       images: [
@@ -106,7 +114,7 @@ Connectivity: 6 x USB 3.1 | 2 x USB 2.0 | 1x RJ-45 Network Ethernet 10/100/1000 
       type: "Best Selling",
     },
     {
-      _id: 2,
+      _id: "5",
 
       thumbnail: "/product7.jpg",
       images: [
@@ -130,7 +138,7 @@ Connectivity: 6 x USB 3.1 | 2 x USB 2.0 | 1x RJ-45 Network Ethernet 10/100/1000 
       type: "Best Selling",
     },
     {
-      _id: 3,
+      _id: "6",
 
       thumbnail: "/product1.jpg",
       images: [
@@ -154,7 +162,7 @@ Connectivity: 6 x USB 3.1 | 2 x USB 2.0 | 1x RJ-45 Network Ethernet 10/100/1000 
       type: "Exclusive",
     },
     {
-      _id: 4,
+      _id: "7",
 
       thumbnail: "/product3.jpg",
       images: [
@@ -178,7 +186,7 @@ Connectivity: 6 x USB 3.1 | 2 x USB 2.0 | 1x RJ-45 Network Ethernet 10/100/1000 
       type: "Exclusive",
     },
     {
-      _id: 5,
+      _id: "8",
 
       thumbnail: "/product4.jpg",
       images: [
@@ -203,7 +211,7 @@ Connectivity: 6 x USB 3.1 | 2 x USB 2.0 | 1x RJ-45 Network Ethernet 10/100/1000 
       type: "Best Deals",
     },
     {
-      _id: 6,
+      _id: "9",
 
       thumbnail: "/product6.jpg",
       images: [
@@ -228,7 +236,7 @@ Connectivity: 6 x USB 3.1 | 2 x USB 2.0 | 1x RJ-45 Network Ethernet 10/100/1000 
       type: "Best Deals",
     },
     {
-      _id: 7,
+      _id: "10",
 
       thumbnail: "/product1.jpg",
       images: [
@@ -253,7 +261,7 @@ Connectivity: 6 x USB 3.1 | 2 x USB 2.0 | 1x RJ-45 Network Ethernet 10/100/1000 
       type: "Exclusive",
     },
     {
-      _id: 8,
+      _id: "11",
 
       thumbnail: "/product2.jpg",
       images: [
@@ -279,7 +287,7 @@ Connectivity: 6 x USB 3.1 | 2 x USB 2.0 | 1x RJ-45 Network Ethernet 10/100/1000 
     },
 
     {
-      _id: 8,
+      _id: "12",
 
       thumbnail: "/product4.jpg",
       images: [
@@ -304,7 +312,7 @@ Connectivity: 6 x USB 3.1 | 2 x USB 2.0 | 1x RJ-45 Network Ethernet 10/100/1000 
       type: "Best Deals",
     },
     {
-      _id: 8,
+      _id: "13",
 
       thumbnail: "/product3.jpg",
       images: [
@@ -329,7 +337,7 @@ Connectivity: 6 x USB 3.1 | 2 x USB 2.0 | 1x RJ-45 Network Ethernet 10/100/1000 
       type: "Best Deals",
     },
     {
-      _id: 8,
+      _id: "14",
 
       thumbnail: "/product2.jpg",
       images: [
@@ -354,7 +362,7 @@ Connectivity: 6 x USB 3.1 | 2 x USB 2.0 | 1x RJ-45 Network Ethernet 10/100/1000 
       type: "Best Deals",
     },
     {
-      _id: 8,
+      _id: "15",
 
       thumbnail: "/product5.jpg",
       images: [

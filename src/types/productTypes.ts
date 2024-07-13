@@ -1,5 +1,5 @@
 interface ProductInterface {
-    _id: number;
+    _id: string;
 
     thumbnail: string;
     images: Array<string>;

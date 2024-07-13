@@ -8,11 +8,12 @@ import Image from "next/image";
 import Path from "./Path";
 import { getDiscountedPrice } from "@/utils/ProductUtils";
 import { Button } from "./ui/button";
-import { FaCartPlus, FaStar } from "react-icons/fa6";
+import { FaCartPlus, FaMinus, FaPlus, FaStar } from "react-icons/fa6";
 import { FaUserCircle } from "react-icons/fa";
 import { CiStar } from "react-icons/ci";
 import ProductCard from "./ProductCard";
 import Link from "next/link";
+import { useShoppingContext } from "@/context/shop";
 const Product = ({
   productId,
   pathname,
@@ -21,8 +22,14 @@ const Product = ({
   pathname: string;
 }) => {
   const { products }: any = useAppContext();
+  const {
+    getItemQuantity,
+    increaseCartQuantity,
+    decreaseCartQuantity,
+    removeFromCart,
+  } = useShoppingContext();
   const [product, setProduct] = useState<ProductInterface>({
-    _id: 0,
+    _id: "",
     thumbnail: "",
     images: [],
     name: "",
@@ -39,7 +46,7 @@ const Product = ({
   const [showReviews, setShowReviews] = useState(false);
   useEffect(() => {
     const mainProduct = products.find(
-      (product: ProductInterface) => product._id === Number(productId)
+      (product: ProductInterface) => product?._id === productId
     );
     if (JSON.stringify(mainProduct) !== "{}") {
       setProduct(mainProduct);
@@ -52,7 +59,7 @@ const Product = ({
           <div className="lg:w-11/12 xl:w-10/12 w-11/12 md:w-full mx-auto flex md:flex-row flex-col">
             <div className="lg:w-auto w-full flex justify-center items-center lg:flex-row flex-col-reverse lg:mr-6 xl:mr-0">
               <div className="flex flex-row lg:flex-col xl:max-h-[25rem] justify-center min-[465px]:justify-center items-center w-[100%] overflow-x-auto overflow-y-hidden lg:overflow-y-auto lg:max-h-[100%] lg:overflow-x-hidden lg:w-32 my-2 lg:my-auto gap-2 mx-auto lg:mx-2 xl:mx-0 xl:w-28">
-                {product.images.map((image, index) => (
+                {product?.images.map((image, index) => (
                   <>
                     <Image
                       src={image}
@@ -76,7 +83,7 @@ const Product = ({
               </div>
               <Image
                 className=" object-cover rounded-md lg:h-full xl:max-h-[25rem] w-full max-w-sm xl:max-w-[25rem] mx-auto border object-center"
-                src={product.images[mainImage]}
+                src={product?.images[mainImage]}
                 alt="product"
                 height={600}
                 width={1000}
@@ -89,10 +96,10 @@ const Product = ({
                 <Path />
               </div>
               <h2 className="text-base mb-1 title-font text-gray-700 font-medium tracking-widest">
-                {product.brand.toUpperCase()}
+                {product?.brand.toUpperCase()}
               </h2>
               <h1 className="text-gray-900 text-3xl font-bold HeadText mb-1">
-                {product.name}
+                {product?.name}
               </h1>
               <div className="flex mb-2">
                 <span className="flex items-center">
@@ -162,24 +169,46 @@ const Product = ({
                 </span>
               </div>
               <p className="leading-relaxed   whitespace-pre-wrap">
-                {product.descripton}
+                {product?.descripton}
               </p>
               {/* <div className="flex flex-col whitespace-pre-wrap mt-2 items-start pb-5 border-b-2 border-gray-100 mb-5">
                 <span className="text-xl font-bold text-zinc-800">
                   About this product
                 </span>
-                <p>{product.about}</p>
+                <p>{product?.about}</p>
               </div> */}
               <div className="flex justify-start w-full items-center gap-1 mt-2 border-t py-2">
                 <span className="HeadText font-medium text-2xl text-gray-900">
-                  ${getDiscountedPrice(product.price, product.discount)}
+                  ${getDiscountedPrice(product?.price, product?.discount)}
                 </span>
-                <span className="line-through">${product.price}</span>
+                <span className="line-through">${product?.price}</span>
                 {/* <span></span> */}
               </div>
-              <div className="flex justify-start mt-2 items-center w-full">
-                <div className="flex justify-center items-center rounded-xl"></div>
-                <button className="flex bg-primary text-white rounded-md text-lg font-semibold px-4 py-2 justify-center items-center gap-2">
+              <div className="flex justify-start mt-2 gap-2 items-center w-full">
+                {getItemQuantity(product?._id) > 0 && (
+                  <div className="flex justify-center items-center ">
+                    <div
+                      onClick={() => decreaseCartQuantity(product._id)}
+                      className="border p-2 cursor-pointer flex justify-center items-center w-4/12 rounded-l-full text-xl text-zinc-800"
+                    >
+                      <FaMinus />
+                    </div>
+                    <div className="py-1 px-4 w-4/12 border-t border-b text-center flex justify-center items-center text-xl text-zinc-800">
+                      {getItemQuantity(product?._id)}
+                    </div>
+
+                    <div
+                      onClick={() => increaseCartQuantity(product._id)}
+                      className="border p-2 cursor-pointer flex justify-center items-center w-4/12 rounded-r-full text-xl text-zinc-800"
+                    >
+                      <FaPlus />
+                    </div>
+                  </div>
+                )}
+                <button
+                  onClick={() => increaseCartQuantity(product._id)}
+                  className={` flex bg-primary text-white rounded-md text-lg font-semibold px-4 py-2 justify-center items-center gap-2`}
+                >
                   <FaCartPlus className="font-bold text-2xl" />
                   <span>Add to cart</span>
                 </button>
@@ -192,7 +221,7 @@ const Product = ({
         <div className="flex gap-2 justify-start w-full border-b pb-2 items-center">
           <div
             onClick={() => setShowReviews(false)}
-            className={`px-1 text-xl font-bold border-b-4 text-zinc-800 hover:border-b-primary transition-all cursor-pointer ${
+            className={`px-1 text-xl font-bold border-b-4 text-zinc-800 hover:border-b-primary transition-all cursor-pointer  ${
               !showReviews ? "border-primary" : "border-zinc-300"
             }`}
           >
@@ -282,13 +311,13 @@ const Product = ({
             </div>
           </div>
         ) : (
-          <div className="p-2 sm:p-5  flex flex-col justify-start items-start w-full">
+          <div className="p-2 sm:p-5 whitespace-pre-wrap flex flex-col justify-start items-start w-full">
             <h1 className="text-xl font-bold text-zinc-800">Description</h1>
-            <p>{product.descripton}</p>
+            <p className="whitespace-pre-wrap">{product?.descripton}</p>
             <h1 className="text-xl mt-4 font-bold text-zinc-800">
               More About This Product
             </h1>
-            <p>{product.about}</p>
+            <p>{product?.about}</p>
           </div>
         )}
       </div>
@@ -299,7 +328,7 @@ const Product = ({
         </div>
         <div className="grid px-5 lg:px-0 min-[500px]:grid-cols-2 grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-2 xl:w-11/12 mt-2 lg:w-11/12 w-full justify-center items-center">
           {products.map((productItem: ProductInterface) => {
-            if (productItem.category !== product.category) return null;
+            if (productItem.category !== product?.category) return null;
             return <ProductCard key={productItem._id} product={productItem} />;
           })}
         </div>

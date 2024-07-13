@@ -3,11 +3,19 @@ import { Button } from "@/components/ui/button";
 import ProductInterface from "@/types/productTypes";
 import Link from "next/link";
 import { getDiscountedPrice } from "@/utils/ProductUtils";
+import { useShoppingContext } from "@/context/shop";
+import { FaMinus, FaPlus } from "react-icons/fa6";
+import toast from "react-hot-toast";
+import Image from "next/image";
+import { RxCross2 } from "react-icons/rx";
+
 interface Props {
   product: ProductInterface;
   minWidth?: boolean;
 }
 export default function ProductCard({ product, minWidth }: Props) {
+  const { increaseCartQuantity, decreaseCartQuantity, getItemQuantity } =
+    useShoppingContext();
   return (
     <div
       className={`relative ${
@@ -30,8 +38,11 @@ export default function ProductCard({ product, minWidth }: Props) {
         )}
       </Link>
       <div className="mt-4 px-5 pb-5">
+        <small className="text-xs font-bold uppercase w-full text-left tracking-tight text-zinc-600">
+          {product?.brand}
+        </small>
         <Link href={`/shop/product/${product?._id}`}>
-          <h5 className="text-xl tracking-tight text-zinc-900">
+          <h5 className="text-xl w-full text-left tracking-tight text-zinc-900">
             {product?.name}
           </h5>
         </Link>
@@ -47,26 +58,71 @@ export default function ProductCard({ product, minWidth }: Props) {
             )}
           </p>
         </div>
-        <Link
-          href={`/shop/product/${product?._id}`}
-          className="flex items-center justify-center rounded-md bg-primary px-5 py-2.5 text-center text-base font-medium text-white focus:outline-none focus:ring-4 focus:ring-blue-300"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="mr-2 h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth={2}
+        <div className="flex flex-col gap-2 items-center justify-between">
+          <button
+            onClick={() => {
+              if (getItemQuantity(product._id) > 0) return null;
+              increaseCartQuantity(product._id);
+              toast.custom((t) => (
+                <div
+                  className={`${
+                    t.visible ? "animate-enter" : "animate-leave"
+                  } max-w-lg w-full bg-white shadow-lg rounded-lg pointer-events-auto flex ring-1 ring-black ring-opacity-5 top-[2.6rem] relative max-h-32 `}
+                >
+                  <div className="w-4/12">
+                    <Image
+                      objectFit="cover"
+                      className="h-[100%] rounded-l-lg w-[100%] object-cover"
+                      width={100}
+                      height={100}
+                      src={product.thumbnail}
+                      alt=""
+                    />
+                  </div>
+                  <div className=" w-10/12 p-2">
+                    <div className="flex flex-col gap-2 items-start">
+                      <div className="flex flex-col justify-start items-start">
+                        <span className="text-base font-semibold">
+                          {`Added ${product.name} to cart`}
+                        </span>
+                        <span className="text-sm font-medium">
+                          Click view cart to view all the items in the cart or
+                          continue shopping
+                        </span>
+                      </div>
+                      <button className="bg-primary py-1 px-2 rounded-md text-white">
+                        View cart
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    onClick={() => toast.dismiss(t.id)}
+                    className="absolute top-0 cursor-pointer right-0 p-2 text-zinc-400"
+                  >
+                    <RxCross2 className="text-xl" />
+                  </div>
+                </div>
+              ));
+            }}
+            className={`flex  items-center justify-center rounded-md bg-primary px-5 w-full py-2.5 text-center text-base font-medium text-white focus:outline-none`}
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
-            />
-          </svg>
-          Add to cart
-        </Link>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="mr-2 h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+              />
+            </svg>
+            Add to cart
+          </button>
+        </div>
       </div>
     </div>
   );
