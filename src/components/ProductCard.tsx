@@ -14,7 +14,7 @@ interface Props {
   minWidth?: boolean;
 }
 export default function ProductCard({ product, minWidth }: Props) {
-  const { increaseCartQuantity, decreaseCartQuantity, getItemQuantity } =
+  const { increaseCartQuantity, decreaseCartQuantity, getItemQuantity }: any =
     useShoppingContext();
   return (
     <div
