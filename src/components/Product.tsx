@@ -27,7 +27,7 @@ const Product = ({
     increaseCartQuantity,
     decreaseCartQuantity,
     removeFromCart,
-  } = useShoppingContext();
+  }: any = useShoppingContext();
   const [product, setProduct] = useState<ProductInterface>({
     _id: "",
     thumbnail: "",
