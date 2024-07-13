@@ -49,9 +49,9 @@ const Navbar = () => {
 
   return (
     <nav className="sm:border-none border fixed z-50 top-0 w-[100%] flex justify-center items-center flex-col">
-      <div className="flex w-full bg-white min-[400px]:px-5 xl:px-24 lg:px-16 px-1 p-3 justify-between items-center">
+      <div className="flex w-full bg-white min-[400px]:px-5 xl:px-24 lg:px-16 px-0 py-3 justify-between items-center">
         {/* logo */}
-        <Link href={"/"} className="logo">
+        <Link href={"/"} className="logo ">
           <img
             alt="logo"
             src={"/logo.png"}
@@ -196,7 +196,7 @@ const Navbar = () => {
       <div
         className={`${
           openSearch ? "flex" : "hidden"
-        }  gap-2 bg-white border-b pt-1 pb-3 justify-center items-center w-full md:hidden`}
+        }  gap-2 bg-white border-b pt-1 pb-3 sm:px-2 px-2 justify-center items-center w-full md:hidden`}
       >
         <input
           type="text"
