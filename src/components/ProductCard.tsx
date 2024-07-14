@@ -68,22 +68,22 @@ export default function ProductCard({ product, minWidth }: Props) {
         <div className="flex flex-col gap-2 items-center justify-between">
           {getItemQuantity(product._id) > 0 ? (
             <button
-              onClick={() => {
-                decreaseCartQuantity(product._id);
-                toast((t) => (
-                  <div className="flex justify-between items-center my-1">
-                    <div className="flex flex-col justify-center items-center mr-4">
-                      <IoIosWarning className="text-2xl text-yellow-600" />
-                    </div>
-                    <div className="">{product.name} removed to the cart.</div>
-                    <div className="flex flex-col justify-start items-start h-full">
-                      <button onClick={() => toast.dismiss(t.id)} className="">
-                        <RxCross2 className="text-xl text-zinc-400" />
-                      </button>
-                    </div>
-                  </div>
-                ));
-              }}
+              // onClick={() => {
+              //   decreaseCartQuantity(product._id);
+              //   toast((t) => (
+              //     <div className="flex justify-between items-center my-1">
+              //       <div className="flex flex-col justify-center items-center mr-4">
+              //         <IoIosWarning className="text-2xl text-yellow-600" />
+              //       </div>
+              //       <div className="">{product.name} removed to the cart.</div>
+              //       <div className="flex flex-col justify-start items-start h-full">
+              //         <button onClick={() => toast.dismiss(t.id)} className="">
+              //           <RxCross2 className="text-xl text-zinc-400" />
+              //         </button>
+              //       </div>
+              //     </div>
+              //   ));
+              // }}
               className={`flex  items-center justify-center rounded-md bg-zinc-800 w-full px-2 py-2 min-[450px]:px-5  min-[450px]:py-2.5 text-center text-sm min-[450px]:text-base font-medium text-white  shadow-sm border focus:outline-none`}
             >
               <TbShoppingCart className="mr-2 text-2xl text-white" />
