@@ -1,4 +1,7 @@
 "use client";
+export const runtime = "edge";
+export const maxDuration = 60;
+
 import React, { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
 import useAppContext from "@/context";

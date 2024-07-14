@@ -54,7 +54,6 @@ const Navbar = () => {
         window.removeEventListener("resize", handleResize);
       };
     }
-    console.log(cartItems.length());
   }, []);
 
   return (
