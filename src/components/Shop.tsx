@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
 import useAppContext from "@/context";
 import ProductInterface from "@/types/productTypes";
@@ -10,6 +10,13 @@ import Path from "./Path";
 const Shop = () => {
   const { products, setProducts }: any = useAppContext();
   const [openFilter, setOpenFilter] = useState(false);
+  const [makeFixed, setMakeFixed] = useState(false);
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      setMakeFixed(window.scrollY > 0);
+      setOpenFilter(false);
+    });
+  });
   return (
     <div className="flex flex-col mt-[4.5rem] md:mt-28 justify-center items-center w-full">
       <div className="flex justify-start items-center w-[98%] sm:border-t md:border-t-0 p-2 lg:w-[86%]">
@@ -34,7 +41,9 @@ const Shop = () => {
         <div
           className={`w-full  lg:w-3/12 min-h-56 ${
             openFilter ? "grid" : "hidden"
-          } grid-cols-2 lg:flex justify-center lg:flex-col  lg:justify-start items-center rounded-md border shadow-sm p-4 gap-2`}
+          } grid-cols-2 sticky lg:flex justify-center lg:flex-col  lg:justify-start items-center rounded-md border shadow-sm p-4 gap-2 min-[1024px]:${
+            makeFixed ? "fixed top-32" : ""
+          }`}
         >
           <div className="flex flex-col w-full justify-start items-center">
             <h1 className="w-full text-lg font-semibold text-black text-left border-b border-zinc-300 pb-[0.05rem]">
@@ -131,7 +140,7 @@ const Shop = () => {
           </div>
           {/* <div className="filter">2</div> */}
         </div>
-        <div className="w-full lg:w-9/12 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-2 lg:gap-3 xl:gap-4 xl:grid-cols-3 content-start">
+        <div className="w-full  lg:w-9/12 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-2 lg:gap-3 xl:gap-4 xl:grid-cols-3 content-start">
           {products?.map((product: ProductInterface) => (
             <ProductCard key={product._id} product={product} />
           ))}
