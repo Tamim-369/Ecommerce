@@ -20,6 +20,7 @@ import { HiOutlineMenu } from "react-icons/hi";
 import { MdPhone } from "react-icons/md";
 import { LuMenu } from "react-icons/lu";
 import { PiShoppingCartSimpleFill } from "react-icons/pi";
+import { useShoppingContext } from "@/context/shop";
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
@@ -38,6 +39,8 @@ const Navbar = () => {
   ];
   const [hideCate, setHideCate] = useState(false);
   const pathname = usePathname();
+  const { cartItems }: any = useShoppingContext();
+
   useEffect(() => {
     if (pathname === "/") {
       const handleResize = () => {
@@ -51,6 +54,7 @@ const Navbar = () => {
         window.removeEventListener("resize", handleResize);
       };
     }
+    console.log(cartItems.length());
   }, []);
 
   return (
@@ -93,7 +97,7 @@ const Navbar = () => {
           </button>
           <div className="relative flex justify-center items-center flex-col">
             <div className="absolute hidden min-[400px]:flex flex-col justify-center items-center z-10 px-[4px] py-[0.2px] text-[0.6rem] min-[400px]:text-xs rounded-full text-primary font-bold ml-7 mb-6 border border-transparent bg-transparent text-white min-[400px]:bg-primary min-[400px]:border-zinc-100">
-              3
+              {cartItems?.length}
             </div>
             <button className="text-lg bg-transparent relative text-primary flex justify-center items-center  gap-2 ">
               <PiShoppingCartSimpleFill className="text-2xl min-[400px]:text-[2.3rem] text-primary p-0 bg-transparent min-[400px]:bg-zinc-100 min-[400px]:p-[0.3rem] rounded-md min-[400px]:hover:bg-primary min-[400px]:hover:text-white transition-all  " />
