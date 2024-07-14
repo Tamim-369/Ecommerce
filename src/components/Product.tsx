@@ -41,6 +41,7 @@ const Product = ({
     discount: 0,
     brand: "",
     type: "",
+    sells: 0,
   });
   const [mainImage, setMainImage] = useState(0);
   const [showReviews, setShowReviews] = useState(false);
