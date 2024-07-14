@@ -41,6 +41,7 @@ Best Music Sync System.
       discount: 10,
       brand: "brandz",
       type: "Exclusive",
+      sells: 2,
     },
     {
       _id: "2",
@@ -64,6 +65,7 @@ Connectivity: 6 x USB 3.1 | 2 x USB 2.0 | 1x RJ-45 Network Ethernet 10/100/1000 
       discount: 0,
       brand: "brandz",
       type: "Best Selling",
+      sells: 12,
     },
     {
       _id: "3",
@@ -88,6 +90,7 @@ Connectivity: 6 x USB 3.1 | 2 x USB 2.0 | 1x RJ-45 Network Ethernet 10/100/1000 
       discount: 0,
       brand: "brandz",
       type: "Best Selling",
+      sells: 22,
     },
     {
       _id: "4",
@@ -109,9 +112,10 @@ Graphics: NVIDIA GeForce RTX 4060 Ti 16GB Video Card | 1x HDMI | 2x DisplayPort
 Connectivity: 6 x USB 3.1 | 2 x USB 2.0 | 1x RJ-45 Network Ethernet 10/100/1000 | 802.11AC Wi-Fi | Audio: 7.1 Channel |  Keyboard and mouse
   Special feature: Tempered glass side case panel | Custom RGB case lighting | 7 colors gaming mouse`,
       category: "category",
-      discount: 0,
+      discount: 30,
       brand: "brandz",
       type: "Best Selling",
+      sells: 0,
     },
     {
       _id: "5",
@@ -136,6 +140,7 @@ Connectivity: 6 x USB 3.1 | 2 x USB 2.0 | 1x RJ-45 Network Ethernet 10/100/1000 
       discount: 0,
       brand: "brandz",
       type: "Best Selling",
+      sells: 1,
     },
     {
       _id: "6",
@@ -160,6 +165,7 @@ Connectivity: 6 x USB 3.1 | 2 x USB 2.0 | 1x RJ-45 Network Ethernet 10/100/1000 
       discount: 12,
       brand: "brandz",
       type: "Exclusive",
+      sells: 4,
     },
     {
       _id: "7",
@@ -184,6 +190,7 @@ Connectivity: 6 x USB 3.1 | 2 x USB 2.0 | 1x RJ-45 Network Ethernet 10/100/1000 
       discount: 10,
       brand: "brandz",
       type: "Exclusive",
+      sells: 8,
     },
     {
       _id: "8",
@@ -209,6 +216,7 @@ Connectivity: 6 x USB 3.1 | 2 x USB 2.0 | 1x RJ-45 Network Ethernet 10/100/1000 
       discount: 10,
       brand: "brandz",
       type: "Best Deals",
+      sells: 6,
     },
     {
       _id: "9",
@@ -234,6 +242,7 @@ Connectivity: 6 x USB 3.1 | 2 x USB 2.0 | 1x RJ-45 Network Ethernet 10/100/1000 
       discount: 0,
       brand: "brandz",
       type: "Best Deals",
+      sells: 9,
     },
     {
       _id: "10",
@@ -259,6 +268,7 @@ Connectivity: 6 x USB 3.1 | 2 x USB 2.0 | 1x RJ-45 Network Ethernet 10/100/1000 
       discount: 0,
       brand: "brandz",
       type: "Exclusive",
+      sells: 0,
     },
     {
       _id: "11",
@@ -284,6 +294,7 @@ Connectivity: 6 x USB 3.1 | 2 x USB 2.0 | 1x RJ-45 Network Ethernet 10/100/1000 
       discount: 0,
       brand: "brandz",
       type: "Exclusive",
+      sells: 2,
     },
 
     {
@@ -310,6 +321,7 @@ Connectivity: 6 x USB 3.1 | 2 x USB 2.0 | 1x RJ-45 Network Ethernet 10/100/1000 
       discount: 0,
       brand: "brandz",
       type: "Best Deals",
+      sells: 2,
     },
     {
       _id: "13",
@@ -335,6 +347,7 @@ Connectivity: 6 x USB 3.1 | 2 x USB 2.0 | 1x RJ-45 Network Ethernet 10/100/1000 
       discount: 0,
       brand: "brandz",
       type: "Best Deals",
+      sells: 0,
     },
     {
       _id: "14",
@@ -360,6 +373,7 @@ Connectivity: 6 x USB 3.1 | 2 x USB 2.0 | 1x RJ-45 Network Ethernet 10/100/1000 
       discount: 0,
       brand: "brandz",
       type: "Best Deals",
+      sells: 4,
     },
     {
       _id: "15",
@@ -385,6 +399,7 @@ Connectivity: 6 x USB 3.1 | 2 x USB 2.0 | 1x RJ-45 Network Ethernet 10/100/1000 
       discount: 0,
       brand: "brandz",
       type: "Best Deals",
+      sells: 2,
     },
   ];
   // // useEffect(() => {

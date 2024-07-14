@@ -5,7 +5,6 @@ interface ProductInterface {
     images: Array<string>;
     name: string;
     descripton:string;
-
     specification: string;
     about: string;
     price: number;
@@ -13,6 +12,7 @@ interface ProductInterface {
     discount: number;
     brand: string;
     type: string;
+    sells:number;
 }
 
 export default ProductInterface

@@ -4,10 +4,11 @@ import ProductInterface from "@/types/productTypes";
 import Link from "next/link";
 import { getDiscountedPrice } from "@/utils/ProductUtils";
 import { useShoppingContext } from "@/context/shop";
-import { FaMinus, FaPlus } from "react-icons/fa6";
-import toast from "react-hot-toast";
+import { FaCartPlus, FaMinus, FaPlus } from "react-icons/fa6";
 import Image from "next/image";
 import { RxCross2 } from "react-icons/rx";
+import toast from "react-hot-toast";
+import { FaCheckCircle } from "react-icons/fa";
 
 interface Props {
   product: ProductInterface;
@@ -63,43 +64,16 @@ export default function ProductCard({ product, minWidth }: Props) {
             onClick={() => {
               if (getItemQuantity(product._id) > 0) return null;
               increaseCartQuantity(product._id);
-              toast.custom((t) => (
-                <div
-                  className={`${
-                    t.visible ? "animate-enter" : "animate-leave"
-                  } max-w-lg w-full bg-white shadow-lg rounded-lg pointer-events-auto flex ring-1 ring-black ring-opacity-5 top-[2.6rem] relative max-h-32 `}
-                >
-                  <div className="w-4/12">
-                    <Image
-                      objectFit="cover"
-                      className="h-[100%] rounded-l-lg w-[100%] object-cover"
-                      width={100}
-                      height={100}
-                      src={product.thumbnail}
-                      alt=""
-                    />
+              toast((t) => (
+                <div className="flex justify-between items-center my-1">
+                  <div className="flex flex-col justify-center items-center mr-4">
+                    <FaCheckCircle className="text-2xl text-emerald-600" />
                   </div>
-                  <div className=" w-10/12 p-2">
-                    <div className="flex flex-col gap-2 items-start">
-                      <div className="flex flex-col justify-start items-start">
-                        <span className="text-base font-semibold">
-                          {`Added ${product.name} to cart`}
-                        </span>
-                        <span className="text-sm font-medium">
-                          Click view cart to view all the items in the cart or
-                          continue shopping
-                        </span>
-                      </div>
-                      <button className="bg-primary py-1 px-2 rounded-md text-white">
-                        View cart
-                      </button>
-                    </div>
-                  </div>
-                  <div
-                    onClick={() => toast.dismiss(t.id)}
-                    className="absolute top-0 cursor-pointer right-0 p-2 text-zinc-400"
-                  >
-                    <RxCross2 className="text-xl" />
+                  <div className="">{product.name} added to the cart.</div>
+                  <div className="flex flex-col justify-start items-start h-full">
+                    <button onClick={() => toast.dismiss(t.id)} className="">
+                      <RxCross2 className="text-xl text-zinc-400" />
+                    </button>
                   </div>
                 </div>
               ));
