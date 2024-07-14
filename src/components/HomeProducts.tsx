@@ -9,7 +9,7 @@ import ProductInterface from "@/types/productTypes";
 const HomeProducts = ({ productType }: { productType: string }) => {
   const { products }: any = useAppContext();
   return (
-    <div className="w-10/12 my-20 mx-auto flex flex-col justify-center items-center">
+    <div className="w-full px-2 sm:px-0 sm:w-10/12 my-20 mx-auto flex flex-col justify-center items-center">
       <div className="w-full border-b-2 mt-2 mb-8 border-primary">
         <h1 className="text-3xl  my-2 text-zinc-800 HeadText font-semibold">
           {productType[0].toUpperCase() + productType.slice(1) + [" "]}{" "}
@@ -21,7 +21,7 @@ const HomeProducts = ({ productType }: { productType: string }) => {
         </h1>
       </div>
 
-      <div className="w-full mx-auto  flex flex-col justify-center items-center sm:grid grid-cols-1 content-center text-center min-[500px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div className="w-full mx-auto grid content-center text-center grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {products?.map((product: ProductInterface) => {
           return (
             <>

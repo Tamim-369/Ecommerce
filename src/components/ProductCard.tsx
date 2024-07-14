@@ -38,7 +38,7 @@ export default function ProductCard({ product, minWidth }: Props) {
         )}
       </Link>
       <div className="mt-4 px-2 pb-2 min-[450px]:px-5 min-[450px]:pb-5">
-        <small className="text-[0.6rem] min-[350px]:text-xs font-bold uppercase w-full text-left tracking-tight text-zinc-600">
+        <small className="text-[0.6rem] flex justify-start items-start min-[350px]:text-xs font-bold uppercase w-full text-left tracking-tight text-zinc-600">
           {product?.brand}
         </small>
         <Link href={`/shop/product/${product?._id}`}>

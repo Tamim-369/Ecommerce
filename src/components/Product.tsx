@@ -326,7 +326,7 @@ const Product = ({
         <div className="flex flex-col text-left justify-start items-start text-2xl border-b p-2 mb-2 font-semibold HeadText w-full">
           Suggested Products
         </div>
-        <div className="grid px-5 lg:px-0 min-[500px]:grid-cols-2 grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-2 xl:w-11/12 mt-2 lg:w-11/12 w-full justify-center items-center">
+        <div className="grid px-2 min-[400px]:px-5 lg:px-0 grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-2 xl:w-11/12 mt-2 lg:w-11/12 w-full justify-center items-center">
           {products.map((productItem: ProductInterface) => {
             if (productItem.category !== product?.category) return null;
             return <ProductCard key={productItem._id} product={productItem} />;
