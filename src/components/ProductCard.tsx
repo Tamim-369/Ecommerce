@@ -67,7 +67,7 @@ export default function ProductCard({ product, minWidth }: Props) {
         </div>
         <div className="flex flex-col gap-2 items-center justify-between">
           {getItemQuantity(product._id) > 0 ? (
-            <button
+            <Link
               // onClick={() => {
               //   decreaseCartQuantity(product._id);
               //   toast((t) => (
@@ -84,11 +84,12 @@ export default function ProductCard({ product, minWidth }: Props) {
               //     </div>
               //   ));
               // }}
-              className={`flex  items-center justify-center rounded-md bg-zinc-800 w-full px-2 py-2 min-[450px]:px-5  min-[450px]:py-2.5 text-center text-sm min-[450px]:text-base font-medium text-white  shadow-sm border focus:outline-none`}
+              href={`/shop/cart`}
+              className={`flex  items-center justify-center rounded-md bg-white w-full px-2 py-2 min-[450px]:px-5  min-[450px]:py-2.5 text-center text-sm min-[450px]:text-base font-medium text-black border-primary  shadow-sm border-2 focus:outline-none group group-hover:text-white hover:text-white hover:bg-primary transition-[background] duration-200 ease-linear`}
             >
-              <TbShoppingCart className="mr-2 text-2xl text-white" />
+              <TbShoppingCart className="mr-2 text-2xl text-primary group-hover:text-white" />
               View Cart
-            </button>
+            </Link>
           ) : (
             <button
               onClick={() => {
@@ -107,7 +108,7 @@ export default function ProductCard({ product, minWidth }: Props) {
                   </div>
                 ));
               }}
-              className={`flex  items-center justify-center rounded-md bg-primary w-full px-2 py-2 min-[450px]:px-5  min-[450px]:py-2.5 text-center text-sm min-[450px]:text-base font-medium text-white focus:outline-none`}
+              className={`flex  items-center justify-center rounded-md bg-primary w-full px-2 py-2 min-[450px]:px-5  min-[450px]:py-2.5 text-center text-sm min-[450px]:text-base font-medium text-white border-primary border-2 focus:outline-none`}
             >
               <TbShoppingCartPlus className="mr-2 text-2xl" />
               Add to cart
