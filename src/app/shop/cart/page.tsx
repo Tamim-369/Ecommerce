@@ -48,7 +48,10 @@ const CartPage = () => {
               {cartItems.map((item: CartItem) => {
                 const product = getProductUsingID(item.id, products);
                 return (
-                  <div className="grid grid-cols-3 items-center gap-4">
+                  <div
+                    key={product?._id}
+                    className="grid grid-cols-3 items-center gap-4"
+                  >
                     <div className="col-span-2 flex items-center gap-4">
                       <div className="w-24 h-24 shrink-0 bg-white p-2 rounded-md">
                         <img
