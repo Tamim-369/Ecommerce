@@ -4,7 +4,7 @@ import ProductInterface from "@/types/productTypes";
 import Link from "next/link";
 import { getDiscountedPrice } from "@/utils/ProductUtils";
 import { useShoppingContext } from "@/context/shop";
-import { FaCartPlus, FaMinus, FaPlus } from "react-icons/fa6";
+import { FaArrowRight, FaCartPlus, FaMinus, FaPlus } from "react-icons/fa6";
 import Image from "next/image";
 import { RxCross2 } from "react-icons/rx";
 import toast from "react-hot-toast";
@@ -27,16 +27,17 @@ export default function ProductCard({ product, minWidth }: Props) {
     <div
       className={`relative ${
         minWidth ? "min-w-64 sm:min-w-72" : "w-full"
-      }  flex w-full max-w-xs flex-col  rounded-xl border border-zinc-200 bg-white shadow-md`}
+      }  flex w-full max-w-xs flex-col  rounded-md border border-zinc-200 bg-white shadow-md`}
     >
       <Link
         className="relative  flex h-40 min-[350px]:h-48 min-[450px]:h-60 overflow-hidden rounded-t-xl"
         href={`/shop/product/${product?._id}`}
       >
-        <img
+        <Image
           className="object-cover object-center w-full h-full"
           src={product?.thumbnail}
           alt="product image"
+          fill
         />
         {product.discount > 0 && (
           <span className="absolute top-0 left-0 m-2 rounded-full bg-primary px-2 text-center text-sm font-medium text-white">
@@ -85,10 +86,10 @@ export default function ProductCard({ product, minWidth }: Props) {
               //   ));
               // }}
               href={`/shop/cart`}
-              className={`flex  items-center justify-center rounded-md bg-white w-full px-2 py-2 min-[450px]:px-5  min-[450px]:py-2.5 text-center text-sm min-[450px]:text-base font-medium text-black border-primary  shadow-sm border-2 focus:outline-none group group-hover:text-white hover:text-white hover:bg-primary transition-[background] duration-200 ease-linear`}
+              className={`flex  items-center justify-center rounded-md w-full px-2 py-2 min-[450px]:px-5  min-[450px]:py-2.5 text-center text-sm min-[450px]:text-base  shadow-sm border-2 focus:outline-none group group-hover:text-white text-black font-bold bg-zinc-200 border-zinc-200 transition-[background] duration-200 ease-linear`}
             >
-              <TbShoppingCart className="mr-2 text-2xl text-primary group-hover:text-white" />
               View Cart
+              <FaArrowRight className="ml-2 text-base text-black " />
             </Link>
           ) : (
             <button
